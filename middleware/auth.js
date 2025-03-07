@@ -1,0 +1,41 @@
+const jwt = require("jsonwebtoken");
+const ADMIN = require("../Model/Admin_Schema");
+
+const authMiddleware = async (req, res, next) => {
+    const token = req.header("Authorization");
+
+    if (!token) {
+        return res
+            .status(401)
+            .json({ msg: "Unauthorization http token is not provid" });
+    }
+    // const jwtToken = token.replace("Bearer", "").trim("");
+    console.log("token from auth middlware", token);
+
+    try {
+        // const isVerfied = jwt.verify(token, "Mynameiscannomernstackdevelopmentgeniusintelligent");
+        const isVerfied = jwt.verify(token, process.env.SECRET_KEY);
+        // console.log(isVerfied);
+        const userData = await ADMIN.findById(isVerfied.userId).select({ password: 0 });
+        req.user = userData;
+        req.token = token;
+        req.userID = userData._id;
+        next();
+
+    } catch (err) {
+        console.log(err);
+
+        return res
+            .status(401)
+            .json({ msg: "Unauthorization. Invalid token." });
+    }
+
+
+
+    // next();
+
+
+
+
+}
+module.exports = authMiddleware;
