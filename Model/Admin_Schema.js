@@ -36,7 +36,7 @@ AdminSchema.methods.generateToken = async function () {
         return jwt.sign({
             userId: this._id.toString(),
             email: this.email,
-        }, 'Mynameiscannomernstackdevelopmentgeniusintelligent', {
+        }, process.env.SECRET_KEY, {
             expiresIn: "30d"
         })
     } catch (error) {
