@@ -9,7 +9,6 @@ const authMiddleware = async (req, res, next) => {
             .status(401)
             .json({ msg: "Unauthorization http token is not provid" });
     }
-    // const jwtToken = token.replace("Bearer", "").trim("");
     console.log("token from auth middlware", token);
 
     try {
