@@ -13,7 +13,6 @@ const authMiddleware = async (req, res, next) => {
     console.log("token from auth middlware", token);
 
     try {
-        // const isVerfied = jwt.verify(token, "Mynameiscannomernstackdevelopmentgeniusintelligent");
         const isVerfied = jwt.verify(token, process.env.SECRET_KEY);
         // console.log(isVerfied);
         const userData = await ADMIN.findById(isVerfied.userId).select({ password: 0 });
