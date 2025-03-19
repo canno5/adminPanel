@@ -1,9 +1,10 @@
 const mogoose = require("mongoose");
-// const URI = "mongodb+srv://ciuniliusmasih:canan6451$$@cluster0.4l1x3.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
-
+// const URI = "mongodb+srv://ciuniliusmasih:canan6451$$@cluster0.4l1x3.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+// "mongodb://127.0.0.1:27017/adminPanelData
 // const URI  = "mongodb://localhost:27017/adminPanelData"
 // const URI  = "mongodb://127.0.0.1:27017/adminPanelData"
 const URI  = process.env.MONGODB_URI
+// const URI  = "mongodb://127.0.0.1:27017/adminPanelData"
 
 
 

@@ -10,7 +10,7 @@ const connectDB = require('./db/conn');
 const cors = require("cors");
 const errMiddleware = require("./middleware/err-middleware");
 
-const port = 2000;
+const port = process.env.PORT;
 
 app.use(cors());
 app.use(adminRoute);
@@ -18,9 +18,6 @@ app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 app.use("/admin/api/data", adminRoute);
 app.use(errMiddleware);
-
-
-
 
 connectDB().then(() => {
     app.listen(port, () => {
