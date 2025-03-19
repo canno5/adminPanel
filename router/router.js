@@ -6,15 +6,9 @@ const sigInSchema = require("../validator/validate-admin");
 const validate = require("../middleware/validate-middleware");
 
 router.route("/").get(adminAuth.home);
-// router.route("/user").post(adminAuth.adminPostData);
 router.route("/login").post(adminAuth.login);
-// router.route("/login").post(validate(sigInSchema), adminAuth.login);
 router.route("/user").get(adminAuth.user);
-// router.route("/productcatone/:id").get(adminAuth.getPrductOneCatagory);
-// router.route("/productcatone/type").get(adminAuth.getPrductOneCatagory);
 router.route("/productcatone/:type").get(adminAuth.getPrductOneCatagory);
-// router.route("/productcatone").get(adminAuth.getPrductOneCatagory);
-
 router.route("/product").post(adminAuth.Procuct);
 router.route("/catagory").post(adminAuth.Catagory);
 router.route("/slider").post(adminAuth.Slider);
