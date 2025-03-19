@@ -39,8 +39,6 @@ router.route("/product/edit/:id").patch(adminAuth.UpdateProduct);
 router.route("/catagory/edit/:id").patch(adminAuth.UpdateCatagory);
 router.route("/slide/edit/:id").patch(adminAuth.updateSlider);
 
-// router.route("/product/delete/id").delete(adminAuth.deleteProduct);
-// router.route("/sliders").get(authMiddleware, adminAuth.getAllSlider);
 
 
 
