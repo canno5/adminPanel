@@ -28,13 +28,5 @@ connectDB().then(() => {
 
     });
 });
-// app.get("/canno", (req,res)=>{
-//     res.send("Hello Canno")
-//     req.params
-//     req.query
-// })
-
-// const token =  jwt.sign("tokens", "cannaskaskkaskaskaskakskask");
-// console.log(token)
 
 
