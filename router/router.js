@@ -5,10 +5,6 @@ const authMiddleware = require("../middleware/auth");
 const sigInSchema = require("../validator/validate-admin");
 const validate = require("../middleware/validate-middleware");
 
-
-// router.route("/").get((req,res)=>{
-//     res.status(200).send("Hello World");
-// });
 router.route("/").get(adminAuth.home);
 // router.route("/user").post(adminAuth.adminPostData);
 router.route("/login").post(adminAuth.login);
