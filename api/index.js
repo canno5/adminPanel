@@ -11,7 +11,7 @@ const errMiddleware = require("../middleware/err-middleware");
 
 const port = process.env.PORT;
 
-app.use(express.static("cliend/dist"))
+
 
 app.use(cors());
 app.use(adminRoute);
@@ -19,6 +19,9 @@ app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 app.use("/admin/api/data", adminRoute);
 app.use(errMiddleware);
+
+
+app.use(express.static("cliend/dist"));
 
 connectDB().then(() => {
     app.listen(port, () => {
