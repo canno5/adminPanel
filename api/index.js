@@ -21,7 +21,9 @@ app.use("/admin/api/data", adminRoute);
 app.use(errMiddleware);
 
 
-app.use(express.static("cliend/dist"));
+if(process.env.PORT == "production"){
+    app.use(express.static("cliend/dist"));
+}
 
 connectDB().then(() => {
     app.listen(port, () => {
