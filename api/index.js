@@ -14,10 +14,7 @@ const port = process.env.PORT;
 // NODE_ENV
 if(process.env.PORT == "production"){
     app.use(express.static("cliend/dist"))
-
 }
-
-
 app.use(cors());
 app.use(adminRoute);
 app.use(express.json());
