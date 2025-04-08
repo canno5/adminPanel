@@ -3,16 +3,11 @@ import DashHeading from './DashHeading'
 import Navbar from './Navbar'
 import { CiSearch } from "react-icons/ci";
 import { CiMenuKebab } from "react-icons/ci";
-import { Navigate, NavLink, useNavigate } from 'react-router-dom';
-import { RxCross2 } from "react-icons/rx";
-// import {imgUrl } from "../../"
-// import image from "public/shoponline.webp"
+import { NavLink, useNavigate } from 'react-router-dom';
 import { MdModeEdit } from "react-icons/md";
 import { MdDelete } from "react-icons/md";
 import { MdDescription } from "react-icons/md";
 import Detials from './Detials';
-// import img from '../../src/images/shoponline.webp'
-
 const Product = () => {
 
     const navigate = useNavigate();
@@ -38,7 +33,6 @@ const Product = () => {
 
     const detailData = (id) => {
         setPorducts(
-            // products.filter((val)=>{
             addProduct.filter((val) => {
                 if (val._id === id) {
                     return products;
@@ -86,7 +80,6 @@ const Product = () => {
             <div className="main-bars">
                 <Navbar />
                 <div className="container container-fluids p-0">
-                    {/* <div className='main-prods'> */}
                     <div className="producthead">
                         <DashHeading heading="Products" />
                         <input type="text" name="search" id="search" placeholder='Search Product' onChange={searchBox} />

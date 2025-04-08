@@ -11,7 +11,12 @@ const errMiddleware = require("../middleware/err-middleware");
 
 const port = process.env.PORT;
 
-app.use(express.static("cliend/dist"))
+// NODE_ENV
+if(process.env.PORT == "production"){
+    app.use(express.static("cliend/dist"))
+
+}
+
 
 app.use(cors());
 app.use(adminRoute);
